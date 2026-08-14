@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Click to Copy</title>
+</head>
+<body>
+    <button id="copyBtn">Copy Code</button>
+
+    <script>
+        document.getElementById('copyBtn').addEventListener('click', () => {
+            navigator.clipboard.writeText('' + localStorage.getItem('code'))
+                .then(() => alert('Copied to clipboard!'))
+                .catch(err => alert('Error copying: ' + err));
+        });
+    </script>
+</body>
+</html>
