@@ -4,10 +4,14 @@
     <title>Click to Copy</title>
 </head>
 <body>
+    <button id="copyBtn">Copy Code</button>
+
     <script>
-        navigator.clipboard.writeText(window.location.href.split('code=').pop())
+        document.getElementById('copyBtn').addEventListener('click', () => {
+            navigator.clipboard.writeText(window.location.href.split('code=').pop())
                 .then(() => alert('Copied to clipboard!'))
                 .catch(err => alert('Error copying: ' + err));
+        });
     </script>
 </body>
 </html>
